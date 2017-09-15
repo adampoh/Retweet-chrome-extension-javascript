@@ -1,0 +1,158 @@
+<aside class="tmf tmf--initial" id="tmf">
+    <button class="tmf-btn tmf-btn--follow">
+    <div class="tmf-btn__title">
+      Follow All
+    </div>
+    <div class="tmf-btn__text"></div>
+  </button>
+    <button class="tmf-btn tmf-btn--unfollow">
+    <div class="tmf-btn__title">
+      Unfollow All
+    </div>
+    <div class="tmf-btn__text"></div>
+  </button>
+    <span class="tmf-show-settings">Settings</span>
+    <div class="tmf__message"></div>
+</aside>
+<div class="modal-container" id="tmf-settings">
+    <div class="modal">
+        <div class="modal-content clearfix">
+            <div class="modal-header">
+                <h3 class="modal-title">Twitter Mass Follow Settings</h3>
+            </div>
+            <div class="modal-body t1-form form-horizontal">
+                <h3 class="settings-header">Follow</h3>
+                <div class="control-group">
+                    <label for="followWait" class="t1-label control-label">Wait (milliseconds)</label>
+                    <div class="controls">
+                        <input type="number" id="followWait" step="100">
+                        <p>Wait x milliseconds after each follow to prevent <a href="https://support.twitter.com/articles/355430" target="_blank">aggressive following</a></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followLimit" class="t1-label control-label">Limit</label>
+                    <div class="controls">
+                        <input type="number" id="followLimit" step="1">
+                        <p>The extension will stop following when the limit (successfully followed profiles) is reached. Leave this field empty to set no limit.</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followSkipFollowed" class="t1-label control-label">Skip followed</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="followSkipFollowed"> Skip already once followed profiles
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followProfileImageRequired" class="t1-label control-label">Profile image required</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="followProfileImageRequired"> Follow only profiles with a custom profile image
+            </label>
+                        <p>Skip profiles with the default profile image (egghead)</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followSkipProtected" class="t1-label control-label">Skip protected</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="followSkipProtected"> Skip protected  profiles <span class="Icon Icon--protected"></span>
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followSkipFollower" class="t1-label control-label">Skip follower</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="followSkipFollower"> Skip profiles who already follow you
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followBioRequired" class="t1-label control-label">Bio required</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="followBioRequired"> Follow only profiles with a biography 
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="followBlacklist" class="t1-label control-label">Blacklist</label>
+                    <div class="controls">
+                        <textarea id="followBlacklist" rows="3"></textarea>
+                        <p>Comma separated list of usernames, which will be skipped while following</p>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="settings-header">Unfollow</h3>
+                <div class="control-group">
+                    <label for="unfollowWait" class="t1-label control-label">Wait (milliseconds)</label>
+                    <div class="controls">
+                        <input type="number" id="unfollowWait" step="100">
+                        <p>Wait x milliseconds after each unfollow to prevent <a href="https://support.twitter.com/articles/355430" target="_blank">aggressive unfollowing</a></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowMinDaysFollowed" class="t1-label control-label">Days followed (minimum)</label>
+                    <div class="controls">
+                        <input type="number" id="unfollowMinDaysFollowed" step="1" min="0">
+                        <p>Profiles followed less than x days will be skipped. This only applies to profiles followed with this extension.</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowLimit" class="t1-label control-label">Limit</label>
+                    <div class="controls">
+                        <input type="number" id="unfollowLimit" step="1">
+                        <p>The extension will stop unfollowing when the limit (successfully unfollowed profiles) is reached. Leave this field empty to set no limit.</p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowSkipFollower" class="t1-label control-label">Skip follower</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="unfollowSkipFollower"> Skip profiles who follow you
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowSkipVerified" class="t1-label control-label">Skip Verified</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="unfollowSkipVerified"> Skip verified accounts <span class="Icon Icon--verified Icon--small"></span>
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowMassFollowedRequired" class="t1-label control-label">Mass followed required</label>
+                    <div class="controls">
+                        <label class="t1-label checkbox">
+              <input type="checkbox" id="unfollowMassFollowedRequired"> Unfollow only profiles which have been mass followed by this extension.
+            </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="unfollowBlacklist" class="t1-label control-label">Blacklist</label>
+                    <div class="controls">
+                        <textarea id="unfollowBlacklist" rows="5"></textarea>
+                        <p>Comma separated list of usernames, which will be skipped while unfollowing</p>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="settings-header">Twitter limit exceeded</h3>
+                <div class="control-group">
+                    <label for="extensionWait" class="t1-label control-label">Wait (minutes)</label>
+                    <div class="controls">
+                        <input type="number" id="extensionWait" step="1">
+                        <p>Wait x minutes when a <a href="https://support.twitter.com/articles/355430" target="_blank">twitter limit exceeded</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="modal-btn modal-close tmf-hide-settings">
+      <span class="Icon Icon--close Icon--medium">
+        <span class="visuallyhidden">Schließen</span>
+      </span>
+    </button>
+    </div>
+</div>

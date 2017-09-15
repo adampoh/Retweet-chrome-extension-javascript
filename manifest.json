@@ -1,0 +1,23 @@
+{
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [{
+        "css": ["extension.css"],
+        "js": ["class_list.js", "extension.js"],
+        "matches": ["https://twitter.com/*"]
+    }],
+    "description": "This extension is to auto Follow spec account.",
+    "name": "TTA",
+    "version": "1.0",
+    "icons": {
+        "128": "icon.png"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "manifest_version": 2,
+    "options_page": "popup.html",
+    "permissions": ["storage", "tabs", "http://*/*", "https://*/*", "unlimitedStorage"],
+    "web_accessible_resources": ["extension.html"]
+}

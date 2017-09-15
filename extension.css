@@ -1,0 +1,179 @@
+@keyframes a {
+    0% {
+        transform: perspective(400px) rotateY(90deg);
+        animation-timing-function: ease-in;
+        opacity: 0
+    }
+    40% {
+        transform: perspective(400px) rotateY(-20deg);
+        animation-timing-function: ease-in
+    }
+    60% {
+        transform: perspective(400px) rotateY(10deg);
+        opacity: 1
+    }
+    80% {
+        transform: perspective(400px) rotateY(-5deg)
+    }
+    to {
+        transform: perspective(400px)
+    }
+}
+
+@keyframes b {
+    0% {
+        transform: perspective(400px)
+    }
+    30% {
+        transform: perspective(400px) rotateY(-15deg);
+        opacity: 1
+    }
+    to {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0
+    }
+}
+
+.tmf {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    padding: 15px 30px;
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    width: 290px;
+    z-index: 9999
+}
+
+.tmf--initial {
+    display: none
+}
+
+.tmf--show {
+    animation-name: a
+}
+
+.tmf--hide {
+    animation-name: b
+}
+
+.tmf--follow .tmf-btn--follow {
+    display: block
+}
+
+.tmf--follow .tmf-btn--unfollow,
+.tmf--unfollow .tmf-btn--follow {
+    display: none
+}
+
+.tmf--unfollow .tmf-btn--unfollow {
+    display: block
+}
+
+.tmf--follow .tmf-show-settings,
+.tmf--unfollow .tmf-show-settings,
+.tmf__message {
+    display: none
+}
+
+.tmf--message .tmf__message {
+    display: block
+}
+
+.tmf--message .tmf-btn,
+.tmf--message .tmf-show-settings {
+    display: none
+}
+
+.tmf-show-settings {
+    color: #0084b4;
+    cursor: pointer;
+    font-size: 16px
+}
+
+.tmf-btn {
+    padding: 10px 5px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .15);
+    margin: auto;
+    margin-bottom: 15px;
+    min-height: 80px;
+    width: 230px;
+    display: block;
+    line-height: 1.6;
+    text-align: center
+}
+
+.tmf-btn__title {
+    font-size: 18px;
+    font-weight: 700
+}
+
+.tmf-btn__text {
+    opacity: .8
+}
+
+.tmf-btn--follow {
+    border: 1px solid #e1e8ed;
+    background-color: #e1e8ed;
+    background-image: linear-gradient(#fff, #e1e8ed)
+}
+
+.tmf-btn--unfollow {
+    background-color: #be1931;
+    border: 1px solid #a0041e;
+    color: #fff
+}
+
+.tmf-log {
+    font-size: 12px
+}
+
+.tmf-log--success {
+    color: green
+}
+
+.tmf-log--warn {
+    color: #ff4500
+}
+
+#tmf-settings {
+    display: none
+}
+
+#tmf-settings .modal {
+    left: 50%;
+    margin-left: -295px;
+    top: 100px;
+    width: 590px
+}
+
+#tmf-settings .modal .controls {
+    margin-left: 140px
+}
+
+#tmf-settings .modal .controls p {
+    font-size: 12px
+}
+
+#tmf-settings .modal hr {
+    margin: 20px -12px
+}
+
+#tmf-settings .Icon {
+    vertical-align: middle
+}
+
+.tmf-setting-success .control-label:before {
+    color: green;
+    content: attr(data-success-message);
+    float: left;
+    position: relative
+}
